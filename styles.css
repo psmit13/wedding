@@ -182,3 +182,9 @@ input:focus-visible{border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,130,4
 .pg-logo{position:absolute;left:50%;top:var(--y);width:8.04%;height:auto;translate:-50% -50%;z-index:5}
 .band-logo{--in:clamp(0,calc((var(--p) - var(--a))/(var(--b) - var(--a))),1);opacity:var(--in)}
 @media (prefers-reduced-motion:reduce){.cover-stack{transform:none!important}}
+/* page-to-page dissolve; Lagna header fades in with its first section */
+.scene{z-index:2}.flow{z-index:1}.stage{pointer-events:none;will-change:transform,opacity}
+.scene-cover{background:var(--cream)}.scene-manglik{background:#d9fbfa}.scene-lagna{background:linear-gradient(transparent calc(100% - 100svh),#edefca calc(100% - 100svh))}
+.scene-lagna .stack{-webkit-mask-image:linear-gradient(#000 93%,transparent);mask-image:linear-gradient(#000 93%,transparent)}
+.scene-lagna .stack>img:first-child{-webkit-mask-image:linear-gradient(transparent 9%,#000 14%);mask-image:linear-gradient(transparent 9%,#000 14%)}
+.scene-lagna .stack::after{content:"";position:absolute;inset:0;z-index:1;background:url(assets/page3.jpg) center/100% 100% no-repeat;clip-path:inset(0 0 85.5% 0);--in:clamp(0,calc((var(--p) - .06)/.14),1);opacity:var(--in);filter:blur(calc((1 - var(--in))*1.6cqw))}
