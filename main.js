@@ -114,3 +114,27 @@
     }
   });
 })();
+/* page-to-page transitions: each pinned page holds its place and dissolves into the next */
+(() => {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const scenes = [...document.querySelectorAll("[data-scene]")];
+  const ease = v => v * v * (3 - 2 * v);
+  let queued = false;
+  function run() {
+    queued = false;
+    scenes.forEach((s, i) => {
+      const st = s.firstElementChild, r = s.getBoundingClientRect(), h = st.offsetHeight;
+      let y = 0, o = 1, z = 1;
+      if (r.top >= h || r.bottom <= 0) o = 0;
+      else if (r.top > 0) { y = -r.top; o = i ? ease(1 - r.top / h) : 1; z = 1 + (1 - o) * 0.06; }
+      else if (r.bottom < h) { y = h - r.bottom; const n = s.nextElementSibling; o = n && n.hasAttribute("data-scene") ? 1 : ease(r.bottom / h); }
+      st.style.transform = "translate3d(0," + y + "px,0) scale(" + z + ")";
+      st.style.opacity = o;
+      st.style.visibility = o ? "visible" : "hidden";
+    });
+  }
+  const on = () => { if (!queued) { queued = true; requestAnimationFrame(run); } };
+  addEventListener("scroll", on, { passive: true });
+  addEventListener("resize", on);
+  run();
+})();
