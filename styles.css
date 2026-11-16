@@ -174,3 +174,11 @@ input:focus-visible{border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,130,4
 .scene-lagna .stack{--zoom:.035;transform-origin:50% 0}
 .band{position:absolute;inset:0;background:var(--img) center/100% 100% no-repeat;clip-path:inset(var(--t) var(--r) var(--bt) var(--l));--in:clamp(0,calc((var(--p) - var(--a))/(var(--b) - var(--a))),1);opacity:var(--in);filter:blur(calc((1 - var(--in))*1.6cqw))}
 @media (prefers-reduced-motion:reduce){.stack{transform:none!important}}
+/* sections come up one at a time; logo sits higher */
+.band{transform:translateY(calc((1 - var(--in))*4cqw))}
+.cover-img{transform:none}
+.cover-stack{transform-origin:50% 18%;transform:scale(calc(1 + (1 - clamp(0,var(--p)/.7,1))*.24))}
+.patch{position:absolute;inset:0;background:var(--img) center/100% 100% no-repeat;clip-path:inset(var(--t) var(--r) var(--bt) var(--l));z-index:4}
+.pg-logo{position:absolute;left:50%;top:var(--y);width:8.04%;height:auto;translate:-50% -50%;z-index:5}
+.band-logo{--in:clamp(0,calc((var(--p) - var(--a))/(var(--b) - var(--a))),1);opacity:var(--in)}
+@media (prefers-reduced-motion:reduce){.cover-stack{transform:none!important}}
