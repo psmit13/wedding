@@ -339,3 +339,20 @@ input:focus-visible{border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,130,4
 .pg-manglik .mg,.pg-lagna .mg{padding-bottom:calc(14svh + env(safe-area-inset-bottom))}
 .mg .pg-foot{position:absolute;left:0;right:0;bottom:calc(4.5svh + env(safe-area-inset-bottom));margin:0;padding-top:2.4cqw}
 .mg .pg-foot::before{content:"";display:block;width:14cqw;height:1px;margin:0 auto 2.4cqw;background:linear-gradient(90deg,transparent,rgba(170,125,60,.7),transparent)}
+/* round 18: host names on Manglik, three-line blessings on Lagna */
+.mg .nephew .script.mg-hosts{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:500;font-size:7.4cqw;line-height:1.15;letter-spacing:.01em;margin-bottom:2cqw;text-wrap:balance}
+.lg-bless p{font-size:3.6cqw;line-height:1.5}
+.lg-bless .b{margin-top:1.6cqw}
+.lg-bless .b span{display:block;font-size:4.2cqw;line-height:1.55}
+.pg-lagna .lg-col strong{font-size:9cqw}
+.pg-lagna .lg-col p{font-size:3.3cqw}
+.pg-lagna .lg-col b{font-size:2.7cqw}
+.pg-lagna .lg-couple>.script{font-size:9cqw}
+.pg-lagna .lg-times{font-size:3.9cqw;gap:1.2cqw 8cqw}
+.mg .nephew .script.mg-hosts{display:block;text-align:center;text-wrap:nowrap}
+.mg .nephew .script.mg-hosts span{display:block;white-space:nowrap}
+.lg-bless .b span{font-size:3.9cqw}
+.pg-lagna .lg-col strong{font-size:8.6cqw}
+.pg-lagna .lg-couple>.script{font-size:8.5cqw}
+.pg-lagna .lg-col p{font-size:3.1cqw}
+.pg-lagna .lg-col b{font-size:2.5cqw}
