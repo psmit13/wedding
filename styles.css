@@ -255,3 +255,7 @@ input:focus-visible{border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,130,4
 /* round 8: Manglik page arrives complete through the gate */
 .scene-pages .stage{--x:clamp(0,calc((var(--p) - .2)/.16),1)}
 .pg.pg-lagna{--p:clamp(0,calc((var(--q) - .36)/.64),1)}
+/* round 9: Lagna arrives complete, like the Manglik page */
+.scene-pages{--len:380!important}
+.scene-pages .stage{--x:clamp(0,calc((var(--p) - .22)/.22),1)}
+.pg-lagna .page-full{opacity:1}
