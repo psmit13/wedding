@@ -264,3 +264,17 @@ input:focus-visible{border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,130,4
 .scene-pages .stage{--x:clamp(0,calc((var(--p) - .5)/.16),1)}
 .pg.pg-cover{--p:clamp(0,calc(var(--q)/.36),1);--g:clamp(0,calc((var(--p) - .4)/.52),1);background:var(--sky);opacity:clamp(0,calc((1 - var(--g))/.28),1);z-index:4}
 .pg-cover .art{transform-origin:60% 81%;transform:scale(calc(1 + var(--g)*var(--g)*10));will-change:transform}
+/* round 11: Lagna as a typed page, matching Manglik Prasang */
+.pg.pg-lagna{background:linear-gradient(#eef4d6,#f3f1dc 55%,#f6f1e4)}
+.pg-lagna .mg{transform-origin:50% 50%;transform:scale(calc(1.12 - var(--x)*.12))}
+.lg-bless p{font-size:3.1cqw;line-height:1.45;font-weight:500;text-wrap:balance}
+.lg-bless .b{font-weight:700;margin-top:.6cqw}
+.mg .lg-hosts .script{font-size:7.6cqw;margin-bottom:1cqw}
+.lg-names{display:flex;align-items:center;justify-content:center;gap:2.6cqw;white-space:nowrap}
+.lg-names strong{font-family:var(--display);font-weight:500;font-size:8.6cqw;line-height:1.1;text-transform:uppercase}
+.lg-names .script{font-family:'Pinyon Script',cursive;font-size:8.5cqw;line-height:1}
+.lg-line{display:grid;grid-template-columns:1fr 1fr;gap:5cqw;margin-top:2.6cqw}
+.lg-line p{font-size:2.9cqw;line-height:1.4;font-weight:500;text-wrap:balance}
+.lg-line b{display:block;font-weight:700;font-size:2.5cqw;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.8cqw;color:var(--ink-soft)}
+.lg-times{display:inline-grid;grid-template-columns:auto auto;gap:.6cqw 7cqw;margin:1.2cqw 0 0;text-align:left;font-size:3.3cqw;font-weight:700;line-height:1.35}
+.lg-times dt{margin:0}.lg-times dd{margin:0;text-align:right}
