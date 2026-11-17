@@ -379,3 +379,5 @@ input:focus-visible{border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,130,4
 .mg .join{font-family:'Pinyon Script',cursive;font-size:8cqw;line-height:1;margin:0 0 1.6cqw}
 .mg .join{margin-bottom:4.5cqw}
 .venue-block{background:linear-gradient(#f5eee2,var(--cream) 45%)}
+.pg.pg-lagna{--img:url(assets/photos/site-photos/lagna.webp);--pos:50% 35%;--veil:linear-gradient(rgba(240,248,236,.55),rgba(246,245,232,.7) 30%,rgba(248,243,232,.78) 60%,rgba(248,242,230,.84))}
+.venue-photo{object-position:50% 70%}
