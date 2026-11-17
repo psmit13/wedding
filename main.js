@@ -3,28 +3,47 @@
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
-  /* ---------- scroll-driven scenes: each pinned scene gets --p from 0 to 1 ---------- */
-  const scenes = $$("[data-scene]");
+  /* ---------- scroll-driven scenes: each pinned scene gets --p from 0 to 1 ----------
+     Geometry is cached (no layout reads while scrolling) and --p glides toward the
+     scroll position with a short, frame-rate independent ease, so motion stays silky
+     without feeling delayed. */
+  const scenes = $$("[data-scene]").map(el => ({ el, top: 0, len: 1, cur: 0, tgt: 0 }));
   const root = document.documentElement;
-  let ticking = false;
-  function update() {
-    ticking = false;
-    const vh = window.innerHeight;
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let vh = innerHeight, maxScroll = 1, running = false, last = 0;
+  function measure() {
+    vh = innerHeight;
+    const y = scrollY;
     for (const s of scenes) {
-      const r = s.getBoundingClientRect();
-      if (r.bottom < -vh || r.top > vh * 2) continue;
-      const total = Math.max(1, r.height - vh);
-      const p = Math.min(1, Math.max(0, -r.top / total));
-      s.style.setProperty("--p", p.toFixed(4));
+      const r = s.el.getBoundingClientRect();
+      s.top = r.top + y; s.len = Math.max(1, r.height - vh);
     }
-    const max = document.documentElement.scrollHeight - vh;
-    root.style.setProperty("--scroll", max > 0 ? (window.scrollY / max).toFixed(4) : 0);
+    maxScroll = Math.max(1, root.scrollHeight - vh);
+    targets(); for (const s of scenes) { s.cur = s.tgt; paint(s); }
   }
-  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
-  scenes.forEach(s => s.style.setProperty("--p", 0));
-  window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", onScroll);
-  update();
+  function targets() {
+    const y = scrollY;
+    for (const s of scenes) s.tgt = Math.min(1, Math.max(0, (y - s.top) / s.len));
+    root.style.setProperty("--scroll", (y / maxScroll).toFixed(4));
+  }
+  function paint(s) { s.el.style.setProperty("--p", s.cur.toFixed(4)); }
+  function frame(now) {
+    const dt = Math.min(64, now - (last || now)); last = now;
+    const k = still ? 1 : 1 - Math.exp(-dt / 70);
+    let moving = false;
+    for (const s of scenes) {
+      const d = s.tgt - s.cur;
+      if (Math.abs(d) < 0.0004) { if (s.cur !== s.tgt) { s.cur = s.tgt; paint(s); } continue; }
+      s.cur += d * k; paint(s); moving = true;
+    }
+    if (moving) requestAnimationFrame(frame); else { running = false; last = 0; }
+  }
+  function kick() { targets(); if (!running) { running = true; requestAnimationFrame(frame); } }
+  addEventListener("scroll", kick, { passive: true });
+  addEventListener("resize", () => { measure(); kick(); });
+  addEventListener("load", measure);
+  if (document.fonts) document.fonts.ready.then(measure);
+  measure();
 
   /* ---------- reveal on enter ---------- */
   if ("IntersectionObserver" in window) {
@@ -114,28 +133,4 @@
       btn.disabled = false; btn.textContent = "Send RSVP";
     }
   });
-})();
-/* page-to-page transitions: each pinned page holds its place and dissolves into the next */
-(() => {
-  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  const scenes = [...document.querySelectorAll("[data-scene]")];
-  const ease = v => v * v * (3 - 2 * v);
-  let queued = false;
-  function run() {
-    queued = false;
-    scenes.forEach((s, i) => {
-      const st = s.firstElementChild, r = s.getBoundingClientRect(), h = st.offsetHeight;
-      let y = 0, o = 1, z = 1;
-      if (r.top >= h || r.bottom <= 0) o = 0;
-      else if (r.top > 0) { y = -r.top; o = i ? ease(1 - r.top / h) : 1; z = 1 + (1 - o) * 0.06; }
-      else if (r.bottom < h) { y = h - r.bottom; const n = s.nextElementSibling; o = n && n.hasAttribute("data-scene") ? 1 : ease(r.bottom / h); }
-      st.style.transform = "translate3d(0," + y + "px,0) scale(" + z + ")";
-      st.style.opacity = o;
-      st.style.visibility = o ? "visible" : "hidden";
-    });
-  }
-  const on = () => { if (!queued) { queued = true; requestAnimationFrame(run); } };
-  addEventListener("scroll", on, { passive: true });
-  addEventListener("resize", on);
-  run();
 })();
