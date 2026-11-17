@@ -12,10 +12,13 @@
 <link rel="icon" type="image/png" href="assets/logo.png">
 <link rel="preload" as="font" type="font/woff2" href="fonts/playfair.woff2" crossorigin>
 <link rel="preload" as="image" href="assets/page1.jpg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="progress" aria-hidden="true"><i></i></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="emblem-ink" x="0" y="0" width="1" height="1" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 0.278 0 0 0 0 0.125 0 0 0 0 0.098 -1.375 -2.7 -0.524 3.3 0"/></filter></svg>
 
 <main class="col">
 
@@ -35,23 +38,24 @@
       <div class="gate-date" aria-hidden="true">
         <div class="mg" style="--p:0">
           <div class="win mg-head" style="--a:-.1;--b:0">
-            <img class="mg-logo" src="assets/logo.png" alt="">
+            <span class="mg-emblem" role="img" aria-label="Akshar Purushottam emblem"></span>
             <p class="shree">Shree Swaminarayano Vijayate</p>
             <h2 class="title-caps">Manglik Prasang</h2>
           </div>
-          <div class="win" style="--a:.1;--b:.26">
+          <div class="win" style="--a:-.1;--b:0">
             <div class="countdown">
-              <div><b>–</b><span>days</span></div>
-              <div><b>–</b><span>hours</span></div>
-              <div><b>–</b><span>minutes</span></div>
-              <div><b>–</b><span>seconds</span></div>
+              <div><b data-u="d">–</b><span>days</span></div>
+              <div><b data-u="h">–</b><span>hours</span></div>
+              <div><b data-u="m">–</b><span>minutes</span></div>
+              <div><b data-u="s">–</b><span>seconds</span></div>
             </div>
           </div>
-          <div class="win nephew" style="--a:.32;--b:.48">
-            <p>Patel family request the honour of your presence at the Manglik Prasang of our beloved son</p>
+          <div class="win nephew" style="--a:.14;--b:.32">
+            <p class="script">Patel Family</p>
+            <p>request the honour of your presence at the Manglik Prasang of our beloved son</p>
             <strong>Smit</strong>
           </div>
-          <div class="win mg-when" style="--a:.54;--b:.7">
+          <div class="win mg-when" style="--a:.4;--b:.58">
             <p class="mw-date">January 21st, 2027</p>
             <p class="mw-ev">Ganesh Sthapan | Mandva Muhrat | Pithi</p>
             <p class="mw-ev">at 8:00 AM onwards</p>
@@ -64,16 +68,16 @@
   </section>
 
   <!-- 3 + 4 · MANGLIK PRASANG, then into LAGNA (one pinned scene) -->
-  <section class="scene scene-pages" data-scene style="--len:940">
+  <section class="scene scene-pages" data-scene style="--len:860">
     <div class="stage">
       <div class="pg pg-manglik">
         <div class="mg">
           <div class="win mg-head" style="--a:-.1;--b:0">
-            <img class="mg-logo" src="assets/logo.png" alt="">
+            <span class="mg-emblem" role="img" aria-label="Akshar Purushottam emblem"></span>
             <p class="shree">Shree Swaminarayano Vijayate</p>
             <h2 class="title-caps">Manglik Prasang</h2>
           </div>
-          <div class="win" style="--a:.1;--b:.26">
+          <div class="win" style="--a:-.1;--b:0">
             <div class="countdown" id="countdown" aria-label="Time until the wedding">
               <div><b data-u="d">–</b><span>days</span></div>
               <div><b data-u="h">–</b><span>hours</span></div>
@@ -81,11 +85,12 @@
               <div><b data-u="s">–</b><span>seconds</span></div>
             </div>
           </div>
-          <div class="win nephew" style="--a:.32;--b:.48">
-            <p>Patel family request the honour of your presence at the Manglik Prasang of our beloved son</p>
+          <div class="win nephew" style="--a:.14;--b:.32">
+            <p class="script">Patel Family</p>
+            <p>request the honour of your presence at the Manglik Prasang of our beloved son</p>
             <strong>Smit</strong>
           </div>
-          <div class="win mg-when" style="--a:.54;--b:.7">
+          <div class="win mg-when" style="--a:.4;--b:.58">
             <p class="mw-date">January 21st, 2027</p>
             <p class="mw-ev">Ganesh Sthapan | Mandva Muhrat | Pithi</p>
             <p class="mw-ev">at 8:00 AM onwards</p>
@@ -143,21 +148,6 @@
         <small class="err" data-for="name"></small>
       </label>
 
-      <label class="field">
-        <span>Phone number</span>
-        <input type="tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="24" placeholder="+91 / +1" required>
-        <small class="err" data-for="phone"></small>
-      </label>
-
-      <fieldset class="field">
-        <legend>Attending from</legend>
-        <div class="seg">
-          <label><input type="radio" name="attending_from" value="India" required><span>India</span></label>
-          <label><input type="radio" name="attending_from" value="Canada"><span>Canada</span></label>
-        </div>
-        <small class="err" data-for="attending_from"></small>
-      </fieldset>
-
       <fieldset class="field">
         <legend>Attendance</legend>
         <div class="seg">
@@ -168,6 +158,21 @@
       </fieldset>
 
       <div class="collapsible" id="if-attending" hidden>
+        <label class="field">
+          <span>Phone number</span>
+          <input type="tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="24" placeholder="+91 / +1" required>
+          <small class="err" data-for="phone"></small>
+        </label>
+
+        <fieldset class="field">
+          <legend>Attending from</legend>
+          <div class="seg">
+            <label><input type="radio" name="attending_from" value="India" required><span>India</span></label>
+            <label><input type="radio" name="attending_from" value="Canada"><span>Canada</span></label>
+          </div>
+          <small class="err" data-for="attending_from"></small>
+        </fieldset>
+
         <div class="field">
           <span id="lbl-count">How many people</span>
           <div class="stepper" role="group" aria-labelledby="lbl-count">
