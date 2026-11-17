@@ -378,3 +378,4 @@ input:focus-visible{border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,130,4
 .mg .nephew .script.mg-hosts{font-size:6.7cqw;font-weight:700;letter-spacing:0;margin:0 -5cqw 2.2cqw;color:var(--ink)}
 .mg .join{font-family:'Pinyon Script',cursive;font-size:8cqw;line-height:1;margin:0 0 1.6cqw}
 .mg .join{margin-bottom:4.5cqw}
+.venue-block{background:linear-gradient(#f5eee2,var(--cream) 45%)}
