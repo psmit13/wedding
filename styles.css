@@ -384,3 +384,5 @@ input:focus-visible{border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,130,4
 .venue-photo{object-position:50% 60%}
 .venue-photo{object-position:50% 45%}
 .venue-photo{filter:contrast(.88) brightness(1.06)}
+.pg.pg-lagna{--img:url(assets/photos/site-photos/cover.webp);--pos:50% 100%;--veil:linear-gradient(rgba(240,248,236,.45),rgba(246,245,232,.4) 35%,rgba(248,243,232,.66) 62%,rgba(248,242,230,.86) 82%,rgba(248,242,230,.9))}
+.venue-photo{object-position:50% 35%;filter:none}
