@@ -19,8 +19,8 @@
 
 <main class="col">
 
-  <!-- 1 + 2 · COVER, then through the gate to SAVE THE DATE (one pinned scene) -->
-  <section class="scene scene-cover" data-scene style="--len:420">
+  <!-- 1 · COVER, then through the gate -->
+  <section class="scene scene-cover" data-scene style="--len:330">
     <div class="stage">
       <div class="art art-bottom">
         <h1 class="sr-only">Smit &amp; Harsiddh</h1>
@@ -32,18 +32,7 @@
         <div class="petals" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
       </div>
       <div class="veil" aria-hidden="true"></div>
-      <div class="gate-date">
-        <p class="eyebrow">Shree Swaminarayano Vijayate</p>
-        <h2 class="display">Save the date</h2>
-        <p class="big-date">Thursday, 21 January 2027</p>
-        <p class="muted">BAPS Shri Swaminarayan Mandir, Sarangpur</p>
-        <div class="countdown" id="countdown" aria-label="Time until the wedding">
-          <div><b data-u="d">–</b><span>days</span></div>
-          <div><b data-u="h">–</b><span>hours</span></div>
-          <div><b data-u="m">–</b><span>minutes</span></div>
-          <div><b data-u="s">–</b><span>seconds</span></div>
-        </div>
-      </div>
+      <div class="gate-date" aria-hidden="true"></div>
       <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><i></i></div>
     </div>
   </section>
@@ -54,23 +43,30 @@
       <div class="pg pg-manglik">
         <div class="art art-center">
           <div class="stack">
-          <img class="art-img" src="assets/mandir.jpg" alt="" width="1200" height="1800" loading="lazy">
-          <div class="band" style="--img:url(assets/page2.jpg);--t:9.11%;--bt:77.78%;--l:0.00%;--r:0.00%;--a:0.06;--b:0.2"></div><!-- 1 header: Shree Swaminarayano Vijayate + Manglik Prasang -->
-          <div class="band" style="--img:url(assets/page2.jpg);--t:23.70%;--bt:65.00%;--l:0.00%;--r:0.00%;--a:0.27;--b:0.41"></div><!-- 2 Mandvo and Mosadu names -->
-          <div class="band" style="--img:url(assets/page2.jpg);--t:35.00%;--bt:59.70%;--l:0.00%;--r:0.00%;--a:0.48;--b:0.62"></div><!-- 3 request the honour -->
-          <div class="band" style="--img:url(assets/page2.jpg);--t:40.44%;--bt:52.89%;--l:31.11%;--r:31.11%;--a:0.48;--b:0.62"></div><!-- 3 SMIT -->
-          <div class="band" style="--img:url(assets/page2.jpg);--t:74.44%;--bt:8.89%;--l:0.00%;--r:0.00%;--a:0.67;--b:0.81"></div><!-- 4 date, events, time, venue -->
-          <img class="art-img page-full" src="assets/page2.jpg" alt="Manglik Prasang page of the kankotri" width="1200" height="1800" loading="lazy">
-          <div class="patch" style="--img:url(assets/mandir.jpg);--t:3.41%;--bt:90.89%;--l:42.50%;--r:42.50%"></div>
+          <img class="art-img" src="assets/mandir.jpg" alt="Painted illustration of BAPS Shri Swaminarayan Mandir, Sarangpur" width="1200" height="1800" loading="lazy">
           <img class="pg-logo band-logo" src="assets/logo.png" alt="" style="--y:4.74%;--a:0.06;--b:0.2">
+          <p class="t win shree" style="top:8.2%;--a:.06;--b:.2">Shree Swaminarayano Vijayate</p>
+          <h2 class="t win title-caps" style="top:10.6%;--a:.06;--b:.2">Manglik Prasang</h2>
+          <div class="t win" style="top:18.3%;--a:.27;--b:.41">
+            <div class="countdown" id="countdown" aria-label="Time until the wedding">
+              <div><b data-u="d">–</b><span>days</span></div>
+              <div><b data-u="h">–</b><span>hours</span></div>
+              <div><b data-u="m">–</b><span>minutes</span></div>
+              <div><b data-u="s">–</b><span>seconds</span></div>
+            </div>
           </div>
-          <div class="sr-only">
-            <h2>Manglik Prasang</h2>
-            <p>Shree Swaminarayano Vijayate.</p>
-            <p>Mandvo Shobhavse: Harshadbhai &amp; Hinaben Patel, Priyankbhai &amp; Himaniben Patel, Aviyansh &amp; Yug Patel.</p>
-            <p>Mosadu Shobhavse: Satishbhai &amp; Pritiben Patel, Ved Patel, Kush Patel.</p>
-            <p>request the honour of your presence at the Manglik Prasang of their beloved nephew Smit.</p>
-            <p>January 21st, 2027. Ganesh Sthapan, Mandva Muhrat, Pithi at 8:00 AM. BAPS Shri Swaminarayan Mandir Sarangpur.</p>
+          <div class="t win nephew" style="top:28%;--a:.48;--b:.62">
+            <p>Patel family request the honour of your presence at the Manglik Prasang of our beloved son</p>
+            <strong>Smit</strong>
+          </div>
+          <div class="t win when" style="top:73%;--a:.67;--b:.81">
+            <p class="when-date">January 21st, 2027</p>
+            <dl class="sched">
+              <dt>Ganesh Sthapan | Mandva Muhrat</dt><dd>8:00 AM</dd>
+              <dt>Pithi</dt><dd>9:00 AM</dd>
+            </dl>
+            <p class="venue">BAPS Shri Swaminarayan Mandir Sarangpur</p>
+          </div>
           </div>
         </div>
       </div>
@@ -105,7 +101,8 @@
     <p class="reveal">BAPS Shri Swaminarayan Mandir<br>Sarangpur, Gujarat, India</p>
     <a class="btn ghost reveal" href="https://www.google.com/maps/search/?api=1&query=BAPS+Shri+Swaminarayan+Mandir+Sarangpur+Gujarat" target="_blank" rel="noopener">Open in Maps</a>
     <ol class="timeline">
-      <li class="reveal"><time>8:00 AM</time><span>Ganesh Sthapan · Mandva Muhrat · Pithi</span></li>
+      <li class="reveal"><time>8:00 AM</time><span>Ganesh Sthapan · Mandva Muhrat</span></li>
+      <li class="reveal"><time>9:00 AM</time><span>Pithi</span></li>
       <li class="reveal"><time>10:00 AM</time><span>Jaan Prasthan</span></li>
       <li class="reveal"><time>12:30 PM</time><span>Hasta Melāp</span></li>
     </ol>
