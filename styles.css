@@ -369,3 +369,11 @@ input:focus-visible{border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,130,4
 .lg-couple{padding-bottom:17cqw}
 .lg-col{position:relative}
 .lg-col p{position:absolute;top:100%;left:50%;transform:translateX(-50%);width:34cqw}
+/* round 20: same header-to-title gap on both pages, centered couple, Join us */
+.pg-manglik .mg,.pg-lagna .mg{justify-content:flex-start}
+.pg-manglik .mg>.title-caps,.pg-lagna .mg>.title-caps{margin-top:4.5svh}
+.pg-manglik .mg>.win{margin-top:auto}
+.pg-lagna .mg>.lg-bless{margin-top:3.5svh}
+.pg-lagna .mg>.lg-couple,.pg-lagna .mg>.mg-when{margin-top:auto}
+.mg .nephew .script.mg-hosts{font-size:6.7cqw;font-weight:700;letter-spacing:0;margin:0 -5cqw 2.2cqw;color:var(--ink)}
+.mg .join{font-family:'Pinyon Script',cursive;font-size:8cqw;line-height:1;margin:0 0 1.6cqw}
