@@ -356,3 +356,16 @@ input:focus-visible{border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,130,4
 .pg-lagna .lg-couple>.script{font-size:8.5cqw}
 .pg-lagna .lg-col p{font-size:3.1cqw}
 .pg-lagna .lg-col b{font-size:2.5cqw}
+/* round 19: host names on one line; smaller blessings; couple block centered */
+.mg .nephew .script.mg-hosts{font-size:6.1cqw;margin:0 -4cqw 2cqw}
+.mg .nephew .script.mg-hosts span{display:inline}
+.lg-bless p{font-size:3.2cqw}
+.lg-bless .b span{font-size:3.4cqw;line-height:1.5}
+.lg-couple{grid-template-columns:auto auto auto;justify-content:center;column-gap:2.2cqw;margin:0}
+.lg-col{display:flex;flex-direction:column;align-items:center}
+.pg-lagna .lg-col strong{font-size:8.2cqw}
+.pg-lagna .lg-couple>.script{font-size:8.2cqw}
+.lg-col p{width:34cqw;flex:none}
+.lg-couple{padding-bottom:17cqw}
+.lg-col{position:relative}
+.lg-col p{position:absolute;top:100%;left:50%;transform:translateX(-50%);width:34cqw}
