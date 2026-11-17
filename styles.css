@@ -386,3 +386,16 @@ input:focus-visible{border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,130,4
 .venue-photo{filter:contrast(.88) brightness(1.06)}
 .pg.pg-lagna{--img:url(assets/photos/site-photos/cover.webp);--pos:50% 100%;--veil:linear-gradient(rgba(240,248,236,.45),rgba(246,245,232,.4) 35%,rgba(248,243,232,.66) 62%,rgba(248,242,230,.86) 82%,rgba(248,242,230,.9))}
 .venue-photo{object-position:50% 35%;filter:none}
+/* round 25: smooth, elegant page transitions (eased curves, gentle zoom, GPU layers) */
+.scene-pages .stage{--ye:calc(var(--y)*var(--y)*(3 - 2*var(--y)));--xe:calc(var(--x)*var(--x)*(3 - 2*var(--x)))}
+.pg{will-change:opacity;contain:layout paint;backface-visibility:hidden}
+.pg::before{will-change:transform}
+.pg .mg{will-change:transform,opacity}
+.pg-cover .mg{transform:translate3d(0,calc(var(--ye)*-3svh),0) scale(calc(1 + var(--ye)*.16));opacity:calc(1 - var(--ye)*1.7)}
+.pg.pg-cover{opacity:clamp(0,calc(1 - var(--ye)*1.6),1)}
+.pg.pg-manglik{opacity:clamp(0,calc((var(--ye) - .45)/.4),1)}
+.pg-manglik .mg{transform:translate3d(0,calc((1 - var(--ye))*2.5svh - var(--xe)*3svh),0) scale(calc((1.05 - var(--ye)*.05)*(1 + var(--xe)*.16)));opacity:calc(1 - var(--xe)*1.7)}
+.pg.pg-lagna{opacity:clamp(0,calc((var(--xe) - .45)/.4),1)}
+.pg-lagna .mg{transform:translate3d(0,calc((1 - var(--xe))*2.5svh),0) scale(calc(1.05 - var(--xe)*.05))}
+.pg-flash{opacity:calc(max(min(var(--ye)*2.2,(1 - var(--ye))*2.2),min(var(--xe)*2.2,(1 - var(--xe))*2.2))*.85);will-change:opacity}
+.pg-manglik .countdown div{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(255,255,255,.74)}
