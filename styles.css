@@ -291,3 +291,9 @@ input:focus-visible{border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,130,4
 .cv-names .script{font-family:'Pinyon Script',cursive;font-style:normal;text-transform:none;font-size:22cqw;line-height:.9;margin:0}
 .pg-cover .scroll-cue{color:var(--ink-soft);text-shadow:none}
 .pg-cover .scroll-cue i{background:var(--ink-soft)}
+/* round 13: small S–H header on the cover; separate Manglik timings */
+.pg-cover .mg{justify-content:space-between;padding-top:calc(7svh + env(safe-area-inset-top));padding-bottom:calc(12svh + env(safe-area-inset-bottom))}
+.cv-logo{width:16cqw}
+.mw-pair{margin-top:2cqw}
+.mw-pair .mw-ev{margin:0}
+.mw-time{font-size:3.3cqw;font-weight:500;line-height:1.35}
