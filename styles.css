@@ -326,3 +326,12 @@ input:focus-visible{border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,130,4
 .lg-hosts p:not(.script){font-size:3.5cqw}
 .lg-col p{font-size:3.1cqw}
 .lg-couple{column-gap:1cqw;margin:0 -4cqw}
+/* round 16: temple photos behind each page, veiled so the text stays crisp */
+.pg::before{content:"";position:absolute;inset:0;z-index:0;background:var(--veil),var(--img) var(--pos,50% 100%)/cover no-repeat;transform:scale(calc(1.06 - var(--p,0)*.06));transform-origin:50% 100%}
+.pg .mg{z-index:1}
+.pg.pg-cover{--img:url(assets/photos/site-photos/manglik.webp);--pos:50% 20%;--veil:linear-gradient(rgba(236,251,250,.55),rgba(246,246,240,.62) 35%,rgba(248,243,236,.72) 65%,rgba(248,241,232,.84))}
+.pg.pg-manglik{--img:url(assets/photos/site-photos/venue.webp);--pos:50% 40%;--veil:linear-gradient(rgba(236,251,250,.58),rgba(244,248,244,.7) 30%,rgba(248,243,236,.78) 60%,rgba(248,241,232,.84))}
+.pg.pg-lagna{--img:url(assets/photos/site-photos/cover.webp);--pos:50% 100%;--veil:linear-gradient(rgba(240,248,236,.45),rgba(246,245,232,.4) 35%,rgba(248,243,232,.66) 62%,rgba(248,242,230,.86) 82%,rgba(248,242,230,.9))}
+.pg-cover .mg,.pg-manglik .mg,.pg-lagna .mg{text-shadow:0 0 1.2em rgba(250,247,238,.9),0 0 .3em rgba(250,247,238,.8)}
+.pg-manglik .countdown div{background:rgba(255,255,255,.62);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.venue-photo{display:block;width:min(78%,420px);aspect-ratio:3/4;margin:6px auto 22px;object-fit:cover;object-position:50% 35%;border-radius:999px 999px 14px 14px;box-shadow:0 18px 40px -22px rgba(90,50,30,.45);outline:1px solid rgba(180,140,80,.45);outline-offset:6px}
