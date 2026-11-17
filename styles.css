@@ -240,3 +240,15 @@ input:focus-visible{border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,130,4
 .mw-ev{font-size:2.1cqw;font-weight:700;line-height:1.45}
 .mw-date+.mw-ev{margin-top:.8cqw}
 .mw-venue{font-size:2.4cqw;font-weight:500;text-transform:uppercase;line-height:1.3;margin-top:2.6cqw}
+/* round 7: emblem, script headline, bigger date block, quick start, soft Lagna fades */
+.mg-emblem{display:block;position:relative;width:17cqw;height:12.1cqw;margin:0 auto 2.4cqw}.mg-emblem::before{content:"";position:absolute;inset:0;background:url(assets/page3.jpg) -48.7cqw -3.7cqw/114.6cqw auto no-repeat;filter:url(#emblem-ink)}
+.mg .nephew .script{font-family:'Pinyon Script',cursive;font-weight:400;font-size:11.5cqw;line-height:1.15;margin-bottom:1.6cqw}
+.mw-date{font-size:4.4cqw}
+.mw-ev{font-size:3.3cqw}
+.mw-date+.mw-ev{margin-top:1.2cqw}
+.mw-venue{font-size:3.1cqw;margin-top:3.4cqw}
+.pg.pg-manglik{--p:clamp(0,calc(var(--q)/.36),1)}
+.scene-pages .stage{--x:clamp(0,calc((var(--p) - .38)/.14),1)}
+.pg.pg-lagna{--p:clamp(0,calc((var(--q) - .52)/.48),1)}
+.pg-lagna .band{clip-path:none;filter:none;transform:none;mix-blend-mode:darken;--f:1.4%;-webkit-mask-image:linear-gradient(to bottom,transparent calc(var(--t) - var(--f)),#000 calc(var(--t) + var(--f)),#000 calc(100% - var(--bt) - var(--f)),transparent calc(100% - var(--bt) + var(--f))),linear-gradient(to right,transparent calc(var(--l) - var(--f)),#000 calc(var(--l) + var(--f)),#000 calc(100% - var(--r) - var(--f)),transparent calc(100% - var(--r) + var(--f)));mask-image:linear-gradient(to bottom,transparent calc(var(--t) - var(--f)),#000 calc(var(--t) + var(--f)),#000 calc(100% - var(--bt) - var(--f)),transparent calc(100% - var(--bt) + var(--f))),linear-gradient(to right,transparent calc(var(--l) - var(--f)),#000 calc(var(--l) + var(--f)),#000 calc(100% - var(--r) - var(--f)),transparent calc(100% - var(--r) + var(--f)));-webkit-mask-composite:source-in;mask-composite:intersect}
+.scene-lagna .stack::after{clip-path:none;filter:none;-webkit-mask-image:linear-gradient(#000 12%,transparent 15.5%);mask-image:linear-gradient(#000 12%,transparent 15.5%)}
