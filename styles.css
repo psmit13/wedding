@@ -278,3 +278,16 @@ input:focus-visible{border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,130,4
 .lg-line b{display:block;font-weight:700;font-size:2.5cqw;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.8cqw;color:var(--ink-soft)}
 .lg-times{display:inline-grid;grid-template-columns:auto auto;gap:.6cqw 7cqw;margin:1.2cqw 0 0;text-align:left;font-size:3.3cqw;font-weight:700;line-height:1.35}
 .lg-times dt{margin:0}.lg-times dd{margin:0;text-align:right}
+/* round 12: typed cover, matching the other pages; glow transition into Manglik */
+.scene-pages .stage{--y:clamp(0,calc((var(--p) - .14)/.16),1)}
+.pg.pg-cover{background:linear-gradient(#d9fbfa,#eef7f0 55%,#f6f1e4);opacity:clamp(0,calc(1 - var(--y)*2),1)}
+.pg.pg-manglik{opacity:clamp(0,calc((var(--y) - .55)/.35),1)}
+.pg-cover .mg{transform-origin:50% 50%;transform:scale(calc(1 + var(--y)*var(--y)*1.6))}
+.pg-manglik .mg{transform:scale(calc((1 + var(--x)*var(--x)*1.6)*(1.12 - var(--y)*.12)))}
+.pg-flash{opacity:max(min(clamp(0,calc((var(--x) - .38)*4.5),1),clamp(0,calc((1 - var(--x))*4),1)),min(clamp(0,calc((var(--y) - .3)*4.5),1),clamp(0,calc((1 - var(--y))*4),1)))}
+.cv-logo{width:30cqw;height:auto;margin:0 auto}
+.cv-names{font-family:var(--display);font-weight:500;text-transform:uppercase;line-height:1.05;display:flex;flex-direction:column;align-items:center}
+.cv-names span{font-size:14cqw;letter-spacing:.02em}
+.cv-names .script{font-family:'Pinyon Script',cursive;font-style:normal;text-transform:none;font-size:22cqw;line-height:.9;margin:0}
+.pg-cover .scroll-cue{color:var(--ink-soft);text-shadow:none}
+.pg-cover .scroll-cue i{background:var(--ink-soft)}
