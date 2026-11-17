@@ -335,3 +335,7 @@ input:focus-visible{border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,130,4
 .pg-cover .mg,.pg-manglik .mg,.pg-lagna .mg{text-shadow:0 0 1.2em rgba(250,247,238,.9),0 0 .3em rgba(250,247,238,.8)}
 .pg-manglik .countdown div{background:rgba(255,255,255,.62);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
 .venue-photo{display:block;width:min(78%,420px);aspect-ratio:3/4;margin:6px auto 22px;object-fit:cover;object-position:50% 35%;border-radius:999px 999px 14px 14px;box-shadow:0 18px 40px -22px rgba(90,50,30,.45);outline:1px solid rgba(180,140,80,.45);outline-offset:6px}
+/* round 17: venue line as a footer on Manglik Prasang and Lagna */
+.pg-manglik .mg,.pg-lagna .mg{padding-bottom:calc(14svh + env(safe-area-inset-bottom))}
+.mg .pg-foot{position:absolute;left:0;right:0;bottom:calc(4.5svh + env(safe-area-inset-bottom));margin:0;padding-top:2.4cqw}
+.mg .pg-foot::before{content:"";display:block;width:14cqw;height:1px;margin:0 auto 2.4cqw;background:linear-gradient(90deg,transparent,rgba(170,125,60,.7),transparent)}
