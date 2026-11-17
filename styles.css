@@ -259,3 +259,8 @@ input:focus-visible{border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,130,4
 .scene-pages{--len:380!important}
 .scene-pages .stage{--x:clamp(0,calc((var(--p) - .22)/.22),1)}
 .pg-lagna .page-full{opacity:1}
+/* round 10: cover and pages in one pinned scene, so Manglik appears only once */
+.scene-pages{--len:640!important}
+.scene-pages .stage{--x:clamp(0,calc((var(--p) - .5)/.16),1)}
+.pg.pg-cover{--p:clamp(0,calc(var(--q)/.36),1);--g:clamp(0,calc((var(--p) - .4)/.52),1);background:var(--sky);opacity:clamp(0,calc((1 - var(--g))/.28),1);z-index:4}
+.pg-cover .art{transform-origin:60% 81%;transform:scale(calc(1 + var(--g)*var(--g)*10));will-change:transform}
