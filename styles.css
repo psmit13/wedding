@@ -309,3 +309,20 @@ input:focus-visible{border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,130,4
 .lg-col p{font-size:2.9cqw;line-height:1.4;font-weight:500;text-wrap:balance;margin-top:2.4cqw}
 .lg-col b{display:block;font-weight:700;font-size:2.5cqw;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.8cqw;color:var(--ink-soft)}
 .lg-couple>.script{font-family:'Pinyon Script',cursive;font-size:8.5cqw;line-height:1;margin-top:1.4cqw}
+/* round 15: one even layout for all three pages */
+.pg-cover .mg,.pg-manglik .mg,.pg-lagna .mg{justify-content:space-between;padding:calc(4svh + env(safe-area-inset-top)) 7cqw calc(6svh + env(safe-area-inset-bottom))}
+.pg-cover .mg{padding-bottom:calc(11svh + env(safe-area-inset-bottom))}
+.mg-hdr{position:static}
+.mg-hdr .shree{margin:0}
+.cv-top{display:flex;justify-content:center}
+.cv-logo{width:14cqw}
+.mg .title-caps{margin-top:0}
+.pg-manglik .title-caps,.pg-lagna .title-caps{font-size:9cqw}
+.pg-manglik .nephew .script{font-size:12.5cqw}
+.pg-manglik .nephew p{font-size:3.5cqw}
+.pg-manglik .nephew strong{font-size:12cqw}
+.pg-manglik .mw-date,.pg-lagna .mw-date{margin-bottom:1.6cqw}
+.lg-bless p{font-size:3.3cqw}
+.lg-hosts p:not(.script){font-size:3.5cqw}
+.lg-col p{font-size:3.1cqw}
+.lg-couple{column-gap:1cqw;margin:0 -4cqw}
