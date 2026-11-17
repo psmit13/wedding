@@ -40,7 +40,7 @@
   function tick() {
     let d = Math.max(0, target - Date.now());
     const v = { d: Math.floor(d / 864e5), h: Math.floor(d / 36e5) % 24, m: Math.floor(d / 6e4) % 60, s: Math.floor(d / 1e3) % 60 };
-    for (const k in v) $(`[data-u="${k}"]`, cd).textContent = k === "d" ? v[k] : String(v[k]).padStart(2, "0");
+    for (const k in v) $$(`[data-u="${k}"]`).forEach(el => el.textContent = k === "d" ? v[k] : String(v[k]).padStart(2, "0"));
   }
   tick(); setInterval(tick, 1000);
 
@@ -65,10 +65,11 @@
   function validate() {
     let ok = true; const need = (n, t, cond = true) => { if (!setErr(n, cond && !val(n) ? t : "")) ok = false; };
     need("name", "Please enter your name.");
-    const digits = val("phone").replace(/\D/g, "");
-    if (!setErr("phone", digits.length < 7 || digits.length > 15 ? "Please enter a valid phone number." : "")) ok = false;
-    need("attending_from", "Please choose India or Canada.");
     need("attending", "Please let us know if you can attend.");
+    const attendingYes = val("attending") === "yes";
+    const digits = val("phone").replace(/\D/g, "");
+    if (!setErr("phone", attendingYes && (digits.length < 7 || digits.length > 15) ? "Please enter a valid phone number." : "")) ok = false;
+    need("attending_from", "Please choose India or Canada.", attendingYes);
     const yes = val("attending") === "yes";
     const n = parseInt(val("guest_count"), 10);
     if (!setErr("guest_count", yes && !(n >= 1 && n <= 30) ? "Enter a number between 1 and 30." : "")) ok = false;
@@ -83,7 +84,7 @@
     if (!validate()) { const first = $(".err:not(:empty)", form); first && first.closest(".field").scrollIntoView({ behavior: "smooth", block: "center" }); return; }
     const yes = val("attending") === "yes", bus = yes && val("transportation") === "bus";
     const row = {
-      name: val("name"), phone: val("phone"), attending_from: val("attending_from"), attending: yes,
+      name: val("name"), phone: yes ? val("phone") : null, attending_from: yes ? val("attending_from") : null, attending: yes,
       guest_count: yes ? parseInt(val("guest_count"), 10) : 0,
       transportation: yes ? val("transportation") : null,
       bus_route: bus ? val("bus_route") : null
