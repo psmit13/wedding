@@ -402,3 +402,15 @@ input:focus-visible{border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,130,4
 .seg span small{display:block;margin-top:4px;font-size:12.5px;font-weight:400;letter-spacing:.02em;opacity:.8}
 #if-bus .seg{grid-template-columns:1fr}
 #if-bus .seg span{flex-direction:column;min-height:58px}
+
+/* language toggle + Gujarati */
+.lang-toggle{position:fixed;top:12px;right:calc(max(0px,(100vw - var(--w))/2) + 12px);z-index:30;
+  font:500 12px/1 'Noto Serif Gujarati',var(--serif);color:var(--ink);background:rgba(255,250,241,.82);
+  border:1px solid var(--line);border-radius:999px;padding:7px 12px;cursor:pointer;
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);box-shadow:0 2px 10px rgba(71,32,26,.12)}
+.lang-toggle:hover{background:var(--paper)}
+html:lang(gu) main [data-en],html:lang(gu) main [data-en] *{font-family:'Noto Serif Gujarati',var(--serif);
+  font-style:normal;text-transform:none;letter-spacing:0}
+html:lang(gu) .mg .nephew .script.mg-hosts{font-size:5.6cqw;line-height:1.35}
+html:lang(gu) .mg .nephew .script.mg-hosts span{display:block}
+html:lang(gu) .field>span,html:lang(gu) .field>legend,html:lang(gu) .countdown span,html:lang(gu) .eyebrow{font-size:13.5px}
