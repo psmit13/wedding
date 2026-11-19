@@ -3,6 +3,99 @@
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
+  /* ---------- language toggle (English / Gujarati) ---------- */
+  const GU = {
+    "Shree Swaminarayano Vijayate": "શ્રી સ્વામિનારાયણો વિજયતે",
+    "Manglik Prasang": "માંગલિક પ્રસંગ",
+    "days": "દિવસ", "hours": "કલાક", "minutes": "મિનિટ", "seconds": "સેકન્ડ",
+    "Jitendrakumar &amp;": "જીતેન્દ્રકુમાર અને",
+    "Indiraben Patel": "ઇન્દિરાબેન પટેલ",
+    "request the honour of your presence at the Manglik Prasang of our beloved son": "અમારા વહાલા દીકરાના માંગલિક પ્રસંગે પધારવા આપને ભાવભર્યું આમંત્રણ",
+    "Smit": "સ્મિત", "Harsiddh": "હરસિદ્ધ",
+    "January 21st, 2027": "૨૧ જાન્યુઆરી, ૨૦૨૭",
+    "Ganesh Sthapan | Mandva Muhrat": "ગણેશ સ્થાપન | મંડપ મુહૂર્ત",
+    "Ganesh Sthapan · Mandva Muhrat": "ગણેશ સ્થાપન · મંડપ મુહૂર્ત",
+    "Pithi Ceremony": "પીઠી",
+    "8:00 AM": "સવારે ૮:૦૦", "9:00 AM": "સવારે ૯:૦૦", "10:30 AM": "સવારે ૧૦:૩૦", "12:30 PM": "બપોરે ૧૨:૩૦",
+    "BAPS Shri Swaminarayan Mandir<br>Sarangpur": "બી.એ.પી.એસ. શ્રી સ્વામિનારાયણ મંદિર<br>સારંગપુર",
+    "Lagna": "લગ્ન",
+    "with the grace and blessings of": "શુભ આશીર્વાદ",
+    "Bhagwan Swaminarayan": "ભગવાન સ્વામિનારાયણ",
+    "Guruhari Pramukh Swami Maharaj": "ગુરુહરિ પ્રમુખસ્વામી મહારાજ",
+    "Pragat Guruhari Mahant Swami Maharaj": "પ્રગટ ગુરુહરિ મહંતસ્વામી મહારાજ",
+    "<b>Grandson of</b>Late Ratilalbhai Patel &amp; Taraben Patel": "<b>પૌત્ર</b>સ્વ. રતિલાલભાઈ પટેલ અને તારાબેન પટેલ",
+    "<b>Daughter of</b>Kalpeshbhai &amp; Manishben Prajapati": "<b>પુત્રી</b>કલ્પેશભાઈ અને મનીષબેન પ્રજાપતિ",
+    "weds": "સંગ",
+    "Join us": "પધારશો",
+    "Jaan Prasthan": "જાન પ્રસ્થાન",
+    "Hasta Melāp": "હસ્તમેળાપ",
+    "Scroll": "સ્ક્રોલ કરો",
+    "The venue": "સ્થળ",
+    "Sarangpur": "સારંગપુર",
+    "BAPS Shri Swaminarayan Mandir<br>Sarangpur, Gujarat, India": "બી.એ.પી.એસ. શ્રી સ્વામિનારાયણ મંદિર<br>સારંગપુર, ગુજરાત, ભારત",
+    "Open in Maps": "નકશામાં જુઓ",
+    "RSVP": "આપની હાજરી",
+    "Kindly let us know if you will be joining us.": "આપ પધારશો કે નહીં, તે જરૂર જણાવશો.",
+    "Name": "નામ",
+    "Attendance": "હાજરી",
+    "Joyfully attending": "જરૂર આવીશું",
+    "Unable to attend": "નહીં આવી શકીએ",
+    "Phone number": "ફોન નંબર",
+    "Attending from": "ક્યાંથી આવો છો",
+    "India": "ભારત", "Canada": "કેનેડા",
+    "How many people": "કેટલા લોકો",
+    "Transportation": "કેવી રીતે આવશો",
+    "Own vehicle": "પોતાનું વાહન",
+    "Bus transport": "બસમાં",
+    "Which bus?": "કઈ બસ?",
+    "Bus from Vadodara<small>Atladara BAPS Mandir · 6:00 AM</small>": "વડોદરાથી બસ<small>અટલાદરા BAPS મંદિર · સવારે ૬:૦૦</small>",
+    "Bus from Ahmedabad<small>Vaishnodevi Circle · 8:00 AM</small>": "અમદાવાદથી બસ<small>વૈષ્ણોદેવી સર્કલ · સવારે ૮:૦૦</small>",
+    "Send RSVP": "મોકલો",
+    "Thank you": "આભાર",
+    "Smit <em>&amp;</em> Harsiddh": "સ્મિત <em>&amp;</em> હરસિદ્ધ",
+    "21 January 2027 · Sarangpur": "૨૧ જાન્યુઆરી ૨૦૨૭ · સારંગપુર",
+    /* messages shown by the RSVP form */
+    "Please enter your name.": "કૃપા કરી આપનું નામ લખો.",
+    "Please let us know if you can attend.": "કૃપા કરી જણાવો કે આપ આવી શકશો કે નહીં.",
+    "Please enter a valid phone number.": "કૃપા કરી સાચો ફોન નંબર લખો.",
+    "Please choose India or Canada.": "કૃપા કરી ભારત કે કેનેડા પસંદ કરો.",
+    "Enter a number between 1 and 30.": "૧ થી ૩૦ વચ્ચેની સંખ્યા લખો.",
+    "Please choose how you will travel.": "કૃપા કરી કેવી રીતે આવશો તે પસંદ કરો.",
+    "Please choose a bus.": "કૃપા કરી બસ પસંદ કરો.",
+    "Sending…": "મોકલાય છે…",
+    "RSVP is not open yet, so this response was not saved. Please check back soon.": "હજી જવાબ મોકલી શકાતો નથી. થોડી વાર પછી ફરી પ્રયત્ન કરો.",
+    "Sorry, your RSVP could not be sent. Please check your connection and try again.": "માફ કરશો, જવાબ મોકલી શકાયો નહીં. ઇન્ટરનેટ તપાસીને ફરી પ્રયત્ન કરો.",
+    "We can't wait to celebrate with you, {n}. See you in Sarangpur!": "{n}, આપની રાહ જોઈશું. સારંગપુરમાં મળીએ!",
+    "Thank you for letting us know, {n}. You will be missed.": "{n}, જણાવવા બદલ આભાર. આપની ખોટ સાલશે."
+  };
+  let lang = "en";
+  try { lang = new URLSearchParams(location.search).get("lang") || localStorage.getItem("lang") || "en"; } catch (e) {}
+  if (lang !== "gu") lang = "en";
+  const t = s => (lang === "gu" && GU[s]) || s;
+  const guDigits = s => lang === "gu" ? String(s).replace(/\d/g, d => "૦૧૨૩૪૫૬૭૮૯"[d]) : String(s);
+  const textEls = $$("main *").filter(el => GU[el.innerHTML.trim()]);
+  textEls.forEach(el => el.dataset.en = el.innerHTML.trim());
+  const titleEn = document.title;
+  const toggle = document.createElement("button");
+  toggle.type = "button"; toggle.className = "lang-toggle";
+  document.body.appendChild(toggle);
+  function applyLang() {
+    document.documentElement.lang = lang;
+    textEls.forEach(el => { el.innerHTML = lang === "gu" ? GU[el.dataset.en] : el.dataset.en; });
+    document.title = lang === "gu" ? "સ્મિત & હરસિદ્ધ · લગ્ન આમંત્રણ" : titleEn;
+    toggle.textContent = lang === "gu" ? "English" : "ગુજરાતી";
+    toggle.setAttribute("aria-label", lang === "gu" ? "Switch to English" : "ગુજરાતીમાં જુઓ");
+    $$(".err").forEach(e => { if (e.dataset.en) e.textContent = t(e.dataset.en); });
+  }
+  toggle.addEventListener("click", () => {
+    lang = lang === "gu" ? "en" : "gu";
+    try { localStorage.setItem("lang", lang); } catch (e) {}
+    applyLang();
+    dispatchEvent(new Event("resize"));
+  });
+  applyLang();
+
+
   /* ---------- scroll-driven scenes: each pinned scene gets --p from 0 to 1 ----------
      Geometry is cached (no layout reads while scrolling) and --p glides toward the
      scroll position with a short, frame-rate independent ease, so motion stays silky
@@ -59,7 +152,7 @@
   function tick() {
     let d = Math.max(0, target - Date.now());
     const v = { d: Math.floor(d / 864e5), h: Math.floor(d / 36e5) % 24, m: Math.floor(d / 6e4) % 60, s: Math.floor(d / 1e3) % 60 };
-    for (const k in v) $$(`[data-u="${k}"]`).forEach(el => el.textContent = k === "d" ? v[k] : String(v[k]).padStart(2, "0"));
+    for (const k in v) $$(`[data-u="${k}"]`).forEach(el => el.textContent = guDigits(k === "d" ? v[k] : String(v[k]).padStart(2, "0")));
   }
   tick(); setInterval(tick, 1000);
 
@@ -80,7 +173,7 @@
     i.value = Math.min(30, Math.max(1, (parseInt(i.value, 10) || 1) + Number(b.dataset.step)));
   }));
 
-  function setErr(name, text) { const e = $(`.err[data-for="${name}"]`, form); if (e) e.textContent = text || ""; return !text; }
+  function setErr(name, text) { const e = $(`.err[data-for="${name}"]`, form); if (e) { e.dataset.en = text || ""; e.textContent = t(text || ""); } return !text; }
   function validate() {
     let ok = true; const need = (n, t, cond = true) => { if (!setErr(n, cond && !val(n) ? t : "")) ok = false; };
     need("name", "Please enter your name.");
@@ -111,10 +204,10 @@
     const cfg = window.RSVP_CONFIG || {};
     if (!cfg.supabaseUrl || !cfg.supabaseKey) {
       msg.className = "form-msg bad";
-      msg.textContent = "RSVP is not open yet, so this response was not saved. Please check back soon.";
+      msg.textContent = t("RSVP is not open yet, so this response was not saved. Please check back soon.");
       return;
     }
-    const btn = $("button[type=submit]", form); btn.disabled = true; btn.textContent = "Sending…";
+    const btn = $("button[type=submit]", form); btn.disabled = true; btn.textContent = t("Sending…");
     try {
       const res = await fetch(`${cfg.supabaseUrl.replace(/\/$/, "")}/rest/v1/${cfg.table || "rsvps"}`, {
         method: "POST",
@@ -124,13 +217,13 @@
       if (!res.ok) throw new Error(String(res.status));
       form.hidden = true;
       $("#thanks-text").textContent = yes
-        ? `We can't wait to celebrate with you, ${row.name.split(" ")[0]}. See you in Sarangpur!`
-        : `Thank you for letting us know, ${row.name.split(" ")[0]}. You will be missed.`;
+        ? t("We can't wait to celebrate with you, {n}. See you in Sarangpur!").replace("{n}", row.name.split(" ")[0])
+        : t("Thank you for letting us know, {n}. You will be missed.").replace("{n}", row.name.split(" ")[0]);
       $("#thanks").hidden = false;
     } catch (err) {
       msg.className = "form-msg bad";
-      msg.textContent = "Sorry, your RSVP could not be sent. Please check your connection and try again.";
-      btn.disabled = false; btn.textContent = "Send RSVP";
+      msg.textContent = t("Sorry, your RSVP could not be sent. Please check your connection and try again.");
+      btn.disabled = false; btn.textContent = t("Send RSVP");
     }
   });
 })();
