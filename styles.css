@@ -414,4 +414,4 @@ html:lang(gu) main [data-en],html:lang(gu) main [data-en] *{font-family:'Noto Se
 html:lang(gu) .mg .nephew .script.mg-hosts{font-size:5.6cqw;line-height:1.35}
 html:lang(gu) .mg .nephew .script.mg-hosts span{display:block}
 html:lang(gu) .field>span,html:lang(gu) .field>legend,html:lang(gu) .countdown span,html:lang(gu) .eyebrow{font-size:13.5px}
-html:lang(gu) .pg-lagna .lg-couple>.script{font-size:4.6cqw;line-height:1;margin-top:3.6cqw}
+html:lang(gu) .pg-lagna .lg-couple>.script{font-family:var(--display);font-style:normal;color:var(--gold);font-size:7cqw;line-height:1.1;margin-top:0}
