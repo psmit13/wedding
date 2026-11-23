@@ -25,7 +25,7 @@
     "Pragat Guruhari Mahant Swami Maharaj": "પ્રગટ ગુરુહરિ મહંતસ્વામી મહારાજ",
     "<b>Grandson of</b>Late Ratilalbhai Patel &amp; Late Taraben Patel": "<b>પૌત્ર</b>સ્વ. રતિલાલભાઈ પટેલ અને સ્વ. તારાબેન પટેલ",
     "<b>Daughter of</b>Kalpeshbhai &amp; Manishben Prajapati": "<b>પુત્રી</b>કલ્પેશભાઈ અને મનીષબેન પ્રજાપતિ",
-    "weds": "સંગ",
+    "weds": "&amp;",
     "Join us": "પધારશો",
     "Jaan Prasthan": "જાન પ્રસ્થાન",
     "Hasta Melāp": "હસ્તમેળાપ",
