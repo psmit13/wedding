@@ -11,7 +11,7 @@
     "Jitendrakumar &amp;": "જીતેન્દ્રકુમાર અને",
     "Indiraben Patel": "ઇન્દિરાબેન પટેલ",
     "request the honour of your presence at the Manglik Prasang of our beloved son": "અમારા વહાલા દીકરાના માંગલિક પ્રસંગે પધારવા આપને ભાવભર્યું આમંત્રણ",
-    "Smit": "સ્મિત", "Harsiddh": "હરસિદ્ધ",
+    "Smit": "સ્મિત", "Harsiddh": "હરસિધ્ધ",
     "January 21st, 2027": "૨૧ જાન્યુઆરી, ૨૦૨૭",
     "Ganesh Sthapan | Mandva Muhrat": "ગણેશ સ્થાપન | મંડપ મુહૂર્ત",
     "Ganesh Sthapan · Mandva Muhrat": "ગણેશ સ્થાપન · મંડપ મુહૂર્ત",
@@ -52,7 +52,7 @@
     "Bus from Ahmedabad<small>Vaishnodevi Circle · 8:00 AM</small>": "અમદાવાદથી બસ<small>વૈષ્ણોદેવી સર્કલ · સવારે ૮:૦૦</small>",
     "Send RSVP": "મોકલો",
     "Thank you": "આભાર",
-    "Smit <em>&amp;</em> Harsiddh": "સ્મિત <em>&amp;</em> હરસિદ્ધ",
+    "Smit <em>&amp;</em> Harsiddh": "સ્મિત <em>&amp;</em> હરસિધ્ધ",
     "21 January 2027 · Sarangpur": "૨૧ જાન્યુઆરી ૨૦૨૭ · સારંગપુર",
     /* messages shown by the RSVP form */
     "Please enter your name.": "કૃપા કરી આપનું નામ લખો.",
@@ -82,7 +82,7 @@
   function applyLang() {
     document.documentElement.lang = lang;
     textEls.forEach(el => { el.innerHTML = lang === "gu" ? GU[el.dataset.en] : el.dataset.en; });
-    document.title = lang === "gu" ? "સ્મિત & હરસિદ્ધ · લગ્ન આમંત્રણ" : titleEn;
+    document.title = lang === "gu" ? "સ્મિત & હરસિધ્ધ · લગ્ન આમંત્રણ" : titleEn;
     toggle.textContent = lang === "gu" ? "English" : "ગુજરાતી";
     toggle.setAttribute("aria-label", lang === "gu" ? "Switch to English" : "ગુજરાતીમાં જુઓ");
     $$(".err").forEach(e => { if (e.dataset.en) e.textContent = t(e.dataset.en); });
