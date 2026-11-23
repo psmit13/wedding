@@ -45,7 +45,7 @@
     "India": "ભારત", "Canada": "કેનેડા",
     "How many people": "કેટલા લોકો",
     "Transportation": "કેવી રીતે આવશો",
-    "(Luxury bus arranged for all guests)": "(બધા મહેમાનો માટે લક્ઝરી બસની વ્યવસ્થા છે)",
+    "(Bus arranged for all guests)": "(બધા મહેમાનો માટે બસની વ્યવસ્થા છે)",
     "Own vehicle": "પોતાનું વાહન",
     "Bus transport": "બસમાં",
     "Which bus?": "કઈ બસ?",
