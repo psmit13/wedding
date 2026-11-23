@@ -104,7 +104,19 @@
   <section class="flow venue-block">
     <p class="eyebrow reveal">The venue</p>
     <h2 class="display reveal">Sarangpur</h2>
-    <img class="venue-photo reveal" src="assets/photos/site-photos/lagna.webp" alt="BAPS Shri Swaminarayan Mandir, Sarangpur" loading="lazy">
+    <div class="venue-gallery reveal" aria-roledescription="carousel" aria-label="Photos of BAPS Shri Swaminarayan Mandir, Sarangpur">
+      <div class="vg-arch">
+        <div class="vg-track" tabindex="0">
+          <img class="vg-slide" src="assets/photos/site-photos/lagna.webp" alt="The mandir's main dome" style="object-position:50% 35%" loading="lazy">
+          <img class="vg-slide" src="assets/photos/site-photos/venue.webp" alt="The mandir's carved marble shikhars" style="object-position:50% 40%" loading="lazy">
+          <img class="vg-slide" src="assets/photos/site-photos/manglik.webp" alt="The mandir's carved sandstone facade" style="object-position:50% 25%" loading="lazy">
+          <img class="vg-slide" src="assets/photos/site-photos/cover.webp" alt="The mandir from the gardens" style="object-position:50% 60%" loading="lazy">
+        </div>
+        <button class="vg-nav vg-prev" type="button" aria-label="Previous photo">&#8249;</button>
+        <button class="vg-nav vg-next" type="button" aria-label="Next photo">&#8250;</button>
+      </div>
+      <div class="vg-dots" role="tablist"></div>
+    </div>
     <p class="reveal">BAPS Shri Swaminarayan Mandir<br>Sarangpur, Gujarat, India</p>
     <a class="btn ghost reveal" href="https://www.google.com/maps/search/?api=1&query=BAPS+Shri+Swaminarayan+Mandir+Sarangpur+Gujarat" target="_blank" rel="noopener">Open in Maps</a>
     <ol class="timeline">
