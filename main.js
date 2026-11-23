@@ -16,7 +16,7 @@
     "Ganesh Sthapan | Mandva Muhrat": "ગણેશ સ્થાપન | મંડપ મુહૂર્ત",
     "Ganesh Sthapan · Mandva Muhrat": "ગણેશ સ્થાપન · મંડપ મુહૂર્ત",
     "Pithi Ceremony": "પીઠી",
-    "7:00 AM": "સવારે ૭:૦૦", "8:00 AM": "સવારે ૮:૦૦", "9:00 AM": "સવારે ૯:૦૦", "10:30 AM": "સવારે ૧૦:૩૦", "12:30 PM": "બપોરે ૧૨:૩૦",
+    "7:00 AM": "સવારે ૭:૦૦", "8:00 AM": "સવારે ૮:૦૦", "9:00 AM": "સવારે ૯:૦૦", "10:30 AM": "સવારે ૧૦:૩૦", "11:00 AM": "સવારે ૧૧:૦૦", "12:30 PM": "બપોરે ૧૨:૩૦",
     "BAPS Shri Swaminarayan Mandir<br>Sarangpur": "બી.એ.પી.એસ. શ્રી સ્વામિનારાયણ મંદિર<br>સારંગપુર",
     "Lagna": "લગ્ન",
     "with the grace and blessings of": "શુભ આશીર્વાદ",
@@ -185,8 +185,8 @@
     $$(".reveal").forEach((el, i) => { el.style.transitionDelay = (i % 4) * 90 + "ms"; io.observe(el); });
   } else $$(".reveal").forEach(el => el.classList.add("in"));
 
-  /* ---------- countdown to 21 Jan 2027, 7:00 AM India time ---------- */
-  const target = Date.parse("2027-01-21T07:00:00+05:30");
+  /* ---------- countdown to 21 Jan 2027, 8:00 AM India time ---------- */
+  const target = Date.parse("2027-01-21T08:00:00+05:30");
   const cd = $("#countdown");
   function tick() {
     let d = Math.max(0, target - Date.now());
