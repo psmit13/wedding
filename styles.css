@@ -436,3 +436,4 @@ html:lang(gu) .pg-lagna .lg-couple>.script{font-family:var(--display);font-style
 .vg-dots{display:flex;justify-content:center;gap:8px;margin-top:16px}
 .vg-dots button{width:7px;height:7px;padding:0;border-radius:50%;border:0;background:rgba(180,140,80,.35);cursor:pointer;transition:width .3s,background .3s,border-radius .3s}
 .vg-dots button[aria-selected=true]{width:20px;border-radius:4px;background:var(--gold)}
+.legend-note{font-size:12px;letter-spacing:.01em;text-transform:none;color:var(--gold);font-weight:500;margin-left:4px}
