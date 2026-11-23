@@ -138,6 +138,44 @@
   if (document.fonts) document.fonts.ready.then(measure);
   measure();
 
+
+  /* ---------- venue arch gallery ---------- */
+  (function () {
+    const g = document.querySelector(".venue-gallery"); if (!g) return;
+    const track = g.querySelector(".vg-track"), slides = [...g.querySelectorAll(".vg-slide")];
+    const prev = g.querySelector(".vg-prev"), next = g.querySelector(".vg-next"), dotsEl = g.querySelector(".vg-dots");
+    const dots = slides.map((_, i) => {
+      const b = document.createElement("button"); b.type = "button"; b.setAttribute("role", "tab");
+      b.setAttribute("aria-label", "Photo " + (i + 1) + " of " + slides.length);
+      b.addEventListener("click", () => go(i)); dotsEl.appendChild(b); return b;
+    });
+    const idx = () => Math.round(track.scrollLeft / track.clientWidth);
+    const go = i => track.scrollTo({ left: Math.max(0, Math.min(slides.length - 1, i)) * track.clientWidth });
+    const sync = () => {
+      const i = idx();
+      dots.forEach((d, j) => d.setAttribute("aria-selected", j === i));
+      prev.disabled = i === 0; next.disabled = i === slides.length - 1;
+    };
+    prev.addEventListener("click", () => go(idx() - 1));
+    next.addEventListener("click", () => go(idx() + 1));
+    track.addEventListener("keydown", e => {
+      if (e.key === "ArrowLeft") { e.preventDefault(); go(idx() - 1); }
+      if (e.key === "ArrowRight") { e.preventDefault(); go(idx() + 1); }
+    });
+    let raf; track.addEventListener("scroll", () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(sync); }, { passive: true });
+    window.addEventListener("resize", sync);
+    // mouse drag on desktop
+    let down = false, sx = 0, sl = 0;
+    track.addEventListener("pointerdown", e => { if (e.pointerType !== "mouse") return; down = true; sx = e.clientX; sl = track.scrollLeft; track.style.scrollSnapType = "none"; track.style.scrollBehavior = "auto"; });
+    window.addEventListener("pointermove", e => { if (down) track.scrollLeft = sl - (e.clientX - sx); });
+    window.addEventListener("pointerup", e => {
+      if (!down) return; down = false; track.style.scrollSnapType = ""; track.style.scrollBehavior = "";
+      const d = e.clientX - sx, i = Math.round(sl / track.clientWidth);
+      go(Math.abs(d) > 40 ? i + (d < 0 ? 1 : -1) : i);
+    });
+    sync();
+  })();
+
   /* ---------- reveal on enter ---------- */
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(es => es.forEach(e => {
